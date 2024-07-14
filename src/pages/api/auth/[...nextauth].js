@@ -10,11 +10,13 @@ export default NextAuth({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET
     }),
-    // // Passwordless / email sign in
-    // EmailProvider({
-    //   server: process.env.MAIL_SERVER,
-    //   from: 'NextAuth.js <no-reply@example.com>'
-    // }),
   ],
-  adapter:MongoDBAdapter(clientPromise),
+  adapter: MongoDBAdapter(clientPromise),
+  debug: true,
+  callbacks: {
+    redirect: async (url, baseUrl) => {
+      // Ensuring proper redirect
+      return baseUrl;
+    }
+  }
 })

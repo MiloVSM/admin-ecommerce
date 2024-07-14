@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import { useSession, signIn, signOut } from "next-auth/react"
-import Nav from "@/components/nav";
+import Nav from "./Nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
