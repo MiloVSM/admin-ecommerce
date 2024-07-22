@@ -23,6 +23,6 @@ export default NextAuth({
         return `${baseUrl}${url}`;
       }
       return baseUrl;
-    },
+    },  
   },
 });
